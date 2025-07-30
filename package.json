@@ -1,0 +1,38 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "Buffer": "^0.0.0",
+    "chalk": "^5.4.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^17.1.0",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.16.2",
+    "mongoose-sequence": "^6.0.1",
+    "multer": "^2.0.2",
+    "nodemailer": "^7.0.5",
+    "path": "^0.12.7",
+    "uuid": "^11.1.0",
+    "validator": "^13.15.15"
+  }
+}

@@ -1,0 +1,25 @@
+import express from "express";
+import { Signup } from "../controllers/Admin/Auth/signUp.js";
+import { Login } from "../controllers/Admin/Auth/logIn.js";
+import { forgotPassword } from "../controllers/Admin/Auth/forgotPassword.js";
+import { resetPasswordWithOTP } from "../controllers/Admin/Auth/resetPasswordwithOTP.js";
+import { getallUsers } from "../controllers/Admin/Auth/getAllUsers.js";
+import { deleteUser } from "../controllers/Admin/Auth/deleteUser.js";
+import { verifyToken, hasRole } from "../utils/authMiddleware.js";
+import { getAdmin } from "../controllers/Admin/Auth/getAdmin.js";
+import { updateAdmin } from "../controllers/Admin/Auth/updateAdmin.js";
+import { updateUser } from "../controllers/Admin/Auth/updateUser.js";
+import { addUser } from "../controllers/Admin/Auth/addUser.js";
+const router = express.Router();
+
+router.post("/signup", Signup);
+router.post("/login", Login);
+router.post("/forgot-password", forgotPassword);
+router.post("/reset-password", resetPasswordWithOTP);
+router.get("/getAdmin", verifyToken, hasRole("admin"), getAdmin);
+router.get("/getUsers", verifyToken, hasRole("admin"), getallUsers);
+router.delete("/deleteUser/:_id", verifyToken, hasRole("admin"), deleteUser);
+router.put("/update", verifyToken, hasRole("admin"), updateAdmin);
+router.put("/updateUser", verifyToken, hasRole("admin"), updateUser);
+router.post("/addUser", verifyToken, hasRole("admin"), addUser);
+export default router;
